@@ -578,7 +578,7 @@ def find(
         columns=df_cols,
     )
 
-    # img path might have more than once face
+    # img path might have more than one face
     source_objs = functions.extract_faces(
         img=img_path,
         target_size=target_size,
@@ -707,7 +707,7 @@ def represent(
         elif type(img_path).__module__ == np.__name__:
             img = img_path.copy()
         else:
-            raise ValueError(f"unexpected type for img_path - {type(img_path)}")
+            raise ValueError(f"Unexpected type for img_path - {type(img_path)}")
         # --------------------------------
         if len(img.shape) == 4:
             img = img[0]  # e.g. (1, 224, 224, 3) to (224, 224, 3)
